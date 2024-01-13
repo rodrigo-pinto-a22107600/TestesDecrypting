@@ -73,7 +73,7 @@ public class AESExample
     {
         String originalval = "Rosa";
         String encryptedval = encrypt(originalval);
-        String decryptedval = decrypt(encryptedval);
+        String decryptedval = decrypt("encryptedval");
         System.out.println("Original value: " + originalval);
         System.out.println("Encrypted value: " + encryptedval);
         System.out.println("Decrypted value: " + decryptedval);

@@ -1,7 +1,7 @@
 ### Problemas:
 
-Não encontramos maneira de mudar o PKCS5Padding para PKCS7 como o Fernando utiliza na linha seguinte
-Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding"); (Linha )  
+Não encontramos maneira de mudar o PKCS5Padding para PKCS7 como o Fernando utiliza na linha seguinte  
+Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding"); (Linha 61 do ficheiro **AESExample.java**)  
 Segundo o que nós procuramos o PKCS7 não é dos Padding que vem já com o Java
 
 Não sabemos bem como criar o array de IV, o Fernando apenas faz um comando e gera o array  
