@@ -26,7 +26,7 @@ public class AESExample
     {
         try
         {
-            byte[] iv = {(byte) 81, (byte) 204, (byte) 206,(byte) 17, (byte) 207,(byte) 0,(byte) 49,(byte) 89, (byte) 134,(byte) 61, (byte) 189, (byte) 134, (byte) 128,(byte) 112, (byte) 250, (byte) 248};
+            byte[] iv = {(byte) 109,(byte) 187,(byte) 201,(byte) 218,(byte) 171,(byte) 47,(byte) 202,(byte) 236,(byte) 61,(byte) 145,(byte) 11,(byte) 211,(byte) 122,(byte) 194,(byte) 21,(byte) 123};
             IvParameterSpec ivspec = new IvParameterSpec(iv);
             SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
             KeySpec spec = new PBEKeySpec(SECRET_KEY.toCharArray(), SALTVALUE.getBytes(), 1000, 256);
@@ -34,10 +34,6 @@ public class AESExample
             SecretKeySpec secretKey = new SecretKeySpec(tmp.getEncoded(), "AES");
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
             cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivspec);
-            /* Retruns encrypted value. */
-//            System.out.println(Arrays.toString(cipher.doFinal(strToEncrypt.getBytes(StandardCharsets.UTF_8))));;
-//            byte[] decodedBytes = Base64.getDecoder().decode(cipher.doFinal(strToEncrypt.getBytes(StandardCharsets.UTF_8)));
-//            return new String(decodedBytes);
             return Base64.getEncoder()
                     .encodeToString(cipher.doFinal(strToEncrypt.getBytes(StandardCharsets.UTF_8)));
         }
@@ -52,7 +48,7 @@ public class AESExample
     {
         try
         {
-            byte[] iv = {(byte) 81, (byte) 204, (byte) 206,(byte) 17, (byte) 207,(byte) 0,(byte) 49,(byte) 89, (byte) 134,(byte) 61, (byte) 189, (byte) 134, (byte) 128,(byte) 112, (byte) 250, (byte) 248};
+            byte[] iv = {(byte) 109,(byte) 187,(byte) 201,(byte) 218,(byte) 171,(byte) 47,(byte) 202,(byte) 236,(byte) 61,(byte) 145,(byte) 11,(byte) 211,(byte) 122,(byte) 194,(byte) 21,(byte) 123};
             IvParameterSpec ivspec = new IvParameterSpec(iv);
             SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
             KeySpec spec = new PBEKeySpec(SECRET_KEY.toCharArray(), SALTVALUE.getBytes(), 1000, 256);
@@ -73,7 +69,7 @@ public class AESExample
     {
         String originalval = "Rosa";
         String encryptedval = encrypt(originalval);
-        String decryptedval = decrypt("encryptedval");
+        String decryptedval = decrypt(encryptedval);
         System.out.println("Original value: " + originalval);
         System.out.println("Encrypted value: " + encryptedval);
         System.out.println("Decrypted value: " + decryptedval);
